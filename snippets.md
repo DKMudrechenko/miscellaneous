@@ -1,6 +1,37 @@
 ### Android Template Code Snippets
 
+* [Playlists](#playlists)
 * [Communication](#communication)
+
+### Playlists
+
+###### Set source by name
+
+```java
+setSource(String name) {
+    Iterator iter = MediaGallery.getPlaylist().getSources();
+    while (iter.hasNext()) {
+        Source s = iter.next();
+        if (s.getName().contains(name)) {
+            MediaGallery.setSource(s);
+        }
+    }
+}
+```
+
+###### Set source by index
+
+```java
+setSource(int idx) {
+    int i = 0;
+    for (Iterator iter = MeidaGallery.getPlaylist().getSources(); iter.hasNext();) {
+        Source s = (Source)iter.next();
+        if (i++ == idx) {
+            MeidaGallery.setSource(s);
+        }
+    }
+}
+```
 
 
 ### Communication
