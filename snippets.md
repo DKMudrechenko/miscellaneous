@@ -47,3 +47,20 @@ Controller.addOnCommandListener(new OnCommandListener() {
     }
 });
 ```
+###### Broadcast command from script
+
+```java
+broadcastCommand(String name, String value) {
+     Controller.sendCommand(name, value);
+}
+```
+
+###### Listen for callbacks from a gadget
+
+```java
+Gadget.addOnCallbackListener(new OnCallbackListener() {
+    onCallback(String[] args) {
+        // do something
+    }
+});
+
