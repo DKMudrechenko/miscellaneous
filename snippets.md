@@ -24,12 +24,21 @@ setSource(String name) {
 ```java
 setSource(int idx) {
     int i = 0;
-    for (Iterator iter = MeidaGallery.getPlaylist().getSources(); iter.hasNext();) {
+    for (Iterator iter = MediaGallery.getPlaylist().getSources(); iter.hasNext();) {
         Source s = (Source)iter.next();
         if (i++ == idx) {
             MeidaGallery.setSource(s);
         }
     }
+}
+```
+
+###### Set PlaylistListener
+
+```
+MediaGallery.addPlaylistListener(new PlaylistListener() {
+     onSourceStarted(Source source) {}
+     onSourceCompleted(Source source) {}
 }
 ```
 
